@@ -27,3 +27,16 @@ header{position:relative;background:#fff;z-index:3}.head,.brand,nav,.admissions,
 @media(max-width:740px){.hero{height:clamp(320px,54svh,500px)}.hero h1{margin-bottom:85px}.family-welcome,.family-columns{grid-template-columns:1fr;gap:22px}.family-columns p{margin-bottom:0}.family-columns a{display:inline-block;margin-top:12px}}
 
 .page-banner .banner-intro{max-width:53ch;margin:12px 0 0;font-size:clamp(16px,1.5vw,20px);text-shadow:0 1px 4px #102432}
+.school-footer{padding:clamp(44px,8vw,120px) 0 0;background:white}
+.school-footer .footer-invite{display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,76px);min-height:170px;padding:30px;border-radius:20px;background:#03648a;color:white;text-align:center}
+.footer-invite h2{font-size:clamp(25px,3vw,40px)}.footer-invite p{margin:7px 0 0;font:700 clamp(16px,1.6vw,22px)/1.4 var(--round)}
+.footer-invite .footer-button{flex:none;background:#ff8b0e;color:#2d1900;border-radius:100px;padding:20px 36px;font:700 18px/1.4 var(--round)}.footer-invite .footer-button:hover{background:#ffa338}
+.footer-band{margin-top:clamp(60px,10vw,155px);background:#03648a;color:white}
+.school-footer .footer-columns{display:grid;grid-template-columns:1.35fr 1fr 1fr;align-items:start;gap:40px;padding:clamp(44px,6vw,84px) 0}
+.footer-columns .brand{color:white;width:fit-content}.footer-columns address{font-style:normal;margin-top:24px;line-height:1.85;overflow-wrap:anywhere}
+.footer-columns h2{font:500 25px/1.4 Arial,sans-serif;letter-spacing:normal;margin:0 0 15px}
+.footer-columns nav{display:grid;justify-items:start;gap:0}.footer-columns nav a{padding:4px 0;color:white;font:400 18px/1.4 Arial,sans-serif}
+.footer-columns a:hover,.footer-columns nav a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+.footer-icons{display:flex;gap:12px;flex-wrap:wrap}.footer-icons a{display:grid;place-items:center;border:1.5px solid white;border-radius:50%;width:48px;height:48px}.footer-icons svg{width:26px;height:26px}
+.school-footer .footer-credit{display:block;text-align:right;border-top:1px solid #ffffff55;padding:18px 0;font-size:15px}.footer-band a:focus-visible{outline-color:white}
+@media(max-width:740px){.school-footer .footer-invite{flex-direction:column;gap:18px}.school-footer .footer-columns{grid-template-columns:1fr;gap:32px}.school-footer .footer-credit{text-align:left}}
