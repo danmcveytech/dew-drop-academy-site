@@ -25,3 +25,5 @@ header{position:relative;background:#fff;z-index:3}.head,.brand,nav,.admissions,
 .family-welcome{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:start;gap:8%;padding:clamp(55px,7vw,100px) 0}.family-welcome h2{color:var(--navy)}.family-welcome p:first-child{margin-top:0}
 .family-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4%;margin-top:35px}.family-columns h3{color:var(--navy)}
 @media(max-width:740px){.hero{height:clamp(320px,54svh,500px)}.hero h1{margin-bottom:85px}.family-welcome,.family-columns{grid-template-columns:1fr;gap:22px}.family-columns p{margin-bottom:0}.family-columns a{display:inline-block;margin-top:12px}}
+
+.page-banner .banner-intro{max-width:53ch;margin:12px 0 0;font-size:clamp(16px,1.5vw,20px);text-shadow:0 1px 4px #102432}

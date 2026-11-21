@@ -16,10 +16,10 @@ function icon(name){return h('svg',{viewBox:'0 0 24 24',fill:'none',stroke:'curr
 function brand(){return h('a',{className:'brand',href:'index.html'},h('img',{src:'assets/shield.png',alt:''}),h('span',null,'Dew Drop Academy',h('small',null,'Arise and Shine')))}
 
 const page = document.body.dataset.page || 'index';
-function Banner({title, photo}) {
+function Banner({title, photo, heading, introduction}) {
  return h('section',{className:'page-banner'},
    h('img',{src:'assets/'+photo+'.jpg',alt:''}),
-   h('div',{className:'wrap'},h('a',{href:'index.html'},'Home'), h('span',{'aria-hidden':true},' / '), title,h('h1',null,title)));
+   h('div',{className:'wrap'},h('a',{href:'index.html'},'Home'), h('span',{'aria-hidden':true},' / '), title,h('h1',null,heading || title),introduction && h('p',{className:'banner-intro'},introduction)));
 }
 function schoolPhoto(index) {
  const [file, caption, alt] = photos[index];
@@ -33,7 +33,7 @@ function AboutPage(){
  h('a',{className:'textlink',href:'school-life.html'},'Explore school life'))));
 }
 function AdmissionsPage(){
- return h(React.Fragment,null,h(Banner,{title:'Admissions',photo:'blue-smocks'}),
+ return h(React.Fragment,null,h(Banner,{title:'Admissions',photo:'blue-smocks',heading:'Come and meet us in Medie',introduction:'We’d love to hear about your child. Tell us which class you’re considering, or choose a day to come and see our school.'}),
  h('section',{className:'wrap inside-pair'},h('article',null,h('h2',null,'Let’s talk about your child'),
  h('p',null,'Choosing a school brings practical questions and personal ones. You might want to know the fees first. You might be wondering how your child will find their feet after a move. Either is a good reason to call us.'),
  h('h3',null,'Where to start'),h('p',null,'Share the class you are considering and when you hope to start. Ask us about available places, current fees and what to bring if you decide to apply. If you are unsure which class to ask about, tell us a little about your child’s schooling so far.'),h('h3',null,'Come with your questions'),h('p',null,'Would you like to see the school for yourself? Suggest a day that suits your family and we can agree a time before you travel. Bring the questions that matter to you, from what your child will need on the first morning to how you can keep in touch with the school.'),
