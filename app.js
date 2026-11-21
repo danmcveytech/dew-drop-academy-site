@@ -37,7 +37,7 @@ function AdmissionsPage(){
  h('section',{className:'wrap inside-pair'},h('article',null,h('h2',null,'Let’s talk about your child'),
  h('p',null,'Choosing a school brings practical questions and personal ones. You might want to know the fees first. You might be wondering how your child will find their feet after a move. Either is a good reason to call us.'),
  h('h3',null,'Where to start'),h('p',null,'Share the class you are considering and when you hope to start. Ask us about available places, current fees and what to bring if you decide to apply. If you are unsure which class to ask about, tell us a little about your child’s schooling so far.'),h('h3',null,'Come with your questions'),h('p',null,'Would you like to see the school for yourself? Suggest a day that suits your family and we can agree a time before you travel. Bring the questions that matter to you, from what your child will need on the first morning to how you can keep in touch with the school.'),
- h('a',{className:'textlink',href:phone},'Call 024 473 1840')),
+ h('a',{className:'textlink',href:phone},'Call our admissions office')),
  h('div',{className:'enquiry'},h('h3',null,'Tell us what’s on your mind'),h('p',null,'Write to our school office below. Your email app will open so you can review your message and send it to us.'),
  h('form',{onSubmit:e=>{e.preventDefault();const data=new FormData(e.currentTarget);const body=['Dear Dew Drop Academy,','',data.get('message'),'',data.get('name')].join('\n');location.href='mailto:'+mail+'?subject=Admissions%20enquiry&body='+encodeURIComponent(body)}},
  h(MaterialUI.TextField,{name:'name',label:'Your name',autoComplete:'name',fullWidth:true}),
@@ -47,7 +47,7 @@ function AdmissionsPage(){
 function ContactPage(){
  return h(React.Fragment,null,h(Banner,{title:'Contact Us',photo:'heritage'}),
  h('section',{className:'wrap inside-pair'},h('article',null,h('h2',null,'School office'),h('p',null,'We would be happy to hear from you. Call us if you need directions before setting out, or email if you would like to talk through a question about joining the school.'),
- h('h3',null,'Finding our entrance'),h('p',null,'Our building in Medie has “Dew Drop Academy” above the entrance. Use our digital address below when planning your journey. For a school visit, please get in touch first so we can agree a time to welcome you.'),h('dl',{className:'details'},h('dt',null,'Telephone'),h('dd',null,h('a',{href:phone},'024 473 1840')),h('dt',null,'Email'),h('dd',null,h('a',{href:'mailto:'+mail},mail)),h('dt',null,'Digital address'),h('dd',null,'GW-0332-5797 · Medie, Ghana'))),schoolPhoto(4)));
+ h('h3',null,'Finding our entrance'),h('p',null,'Our building in Medie has “Dew Drop Academy” above the entrance. Use our digital address below when planning your journey. For a school visit, please get in touch first so we can agree a time to welcome you.'),h('a',{className:'textlink',href:'#school-contact'},'School contact details')),schoolPhoto(4)));
 }
 function App(){
  const [view,setView]=React.useState(null),[menu,setMenu]=React.useState(false);
@@ -63,7 +63,6 @@ function App(){
  h('section',{className:'hero','aria-label':'Dew Drop Academy'},
  h('img',{className:'building-photo',src:'assets/campus.jpg',alt:'The front of Dew Drop Academy in Medie, with the school name above the entrance',fetchPriority:'high'}),
  h('h1',null,'Arise and ',h('span',null,'Shine'))),
- h('section',{className:'admissions wrap',id:'admissions'},h('h2',null,'Come and meet us in Medie'),btn('Ask about a visit','admissions.html','orange')),
  h('section',{className:'wrap family-welcome'},h('h2',null,'Welcome to Dew Drop Academy'),
  h('div',null,h('p',null,'When you bring your child through our gates, you bring someone you know by heart. You know the stories they ask to hear again, the questions they save for the walk home, and the things they can do with just a little encouragement. We want to get to know that child, too.'),
  h('p',null,'We opened our school in Medie in 2016. The words on our crest, “Arise and Shine”, express what we hope for every learner here. For one child, that might mean reading a whole page aloud for the first time. For another, it might mean finding the courage to say, “I don’t understand yet.” Both are beginnings worth celebrating.'),
@@ -71,13 +70,12 @@ function App(){
  h('section',{className:'gallery'},h('div',{className:'wrap'},h('h2',null,'A place for the whole child'),
  h('div',{className:'family-columns'},h('article',null,h('h3',null,'Room for questions'),h('p',null,'A good question can take a lesson somewhere unexpected. We want children to wonder aloud, listen to a different answer and have another go when something is difficult.')),
  h('article',null,h('h3',null,'Pride in where we come from'),h('p',null,'The kente colours and traditional smocks in our school photographs will be familiar to many of our families. There is a place here for the stories, languages and traditions your child brings from home.'),h('a',{className:'textlink',href:'school-life.html'},'See our school album')),
- h('article',null,h('h3',null,'A conversation with families'),h('p',null,'Perhaps your child loves counting at the market but goes quiet in a new room. Tell us. Those small details are a good place to begin talking about what helps your child learn.'))))),
- h('section',{className:'contact wrap',id:'contact'},h('div',null,h('h2',null,'We’d love to meet your family'),h('p',null,'If you are thinking about Dew Drop for your child, give us a call. We can talk about the class you have in mind, answer your questions and help you plan a visit.')),h('address',null,h('a',{href:phone},icon('phone'),'024 473 1840'),h('a',{href:'mailto:'+mail},icon('mail'),mail),h('span',null,icon('pin'),'Medie, Ghana · GW-0332-5797'))))),
+ h('article',null,h('h3',null,'A conversation with families'),h('p',null,'Perhaps your child loves counting at the market but goes quiet in a new room. Tell us. Those small details are a good place to begin talking about what helps your child learn.'))))))),
  h('footer',{className:'school-footer'},
    h('section',{className:'footer-invite wrap'},
      h('div',null,h('h2',null,'Come and discover Dew Drop'),h('p',null,'Talk with us about a place for your child.')),
      btn('Ask about admissions','admissions.html','footer-button')),
-   h('div',{className:'footer-band'},
+   h('div',{className:'footer-band',id:'school-contact'},
      h('div',{className:'footer-columns wrap'},
        h('div',null,brand(),h('address',null,'Medie, Ghana',h('br'),'GW-0332-5797',h('br'),h('a',{href:'mailto:'+mail},mail),h('br'),h('a',{href:phone},'024 473 1840'))),
        h('div',null,h('h2',null,'Quick Links'),h('nav',{'aria-label':'Footer navigation'},links())),
@@ -85,7 +83,7 @@ function App(){
          h('div',{className:'footer-icons'},
            h('a',{href:phone,'aria-label':'Call Dew Drop Academy',title:'Call the school'},icon('phone')),
            h('a',{href:'mailto:'+mail,'aria-label':'Email Dew Drop Academy',title:'Email the school'},icon('mail')),
-           h('a',{href:'contact.html','aria-label':'Find our school address',title:'Find our school'},icon('pin'))))),
+           h('a',{href:'contact.html','aria-label':'View visiting information',title:'Find our school'},icon('pin'))))),
      h('p',{className:'footer-credit wrap'},'Copyright © '+new Date().getFullYear()+' Dew Drop Academy'))),
  h(Dialog,{open:view!==null,onClose:()=>setView(null),maxWidth:'md','aria-labelledby':'photo-title',onKeyDown:e=>{if(e.key==='ArrowRight')setView(turn(view,1,photos.length));if(e.key==='ArrowLeft')setView(turn(view,-1,photos.length))}},view!==null&&h('div',{className:'lightbox'},h('div',{className:'lighthead'},h('h3',{id:'photo-title'},photos[view][1]),control('close','Close photograph',()=>setView(null))),h('img',{src:'assets/'+photos[view][0]+'.jpg',alt:photos[view][2]}),h('div',{className:'lightfoot'},h('span',null,(view+1)+' of '+photos.length),controls(view,setView,photos.length)))));}
 ReactDOM.createRoot(document.getElementById('root')).render(h(ThemeProvider,{theme},h(App)));
